@@ -5,8 +5,8 @@ import {Logger} from '../logger';
 @Injectable()
 export class HeroService {
         heroes: Hero[];
-        // constructor(public logger: Logger) {
-        constructor() {
+        constructor(public logger: Logger) {
+        // constructor() {
             this.heroes = HEROES;
         }
         getHeroes() {

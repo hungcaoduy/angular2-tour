@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var mock_heroes_1 = require('./models/mock-heroes');
+var logger_1 = require('../logger');
 var HeroService = (function () {
-    // constructor(public logger: Logger) {
-    function HeroService() {
+    function HeroService(logger) {
+        this.logger = logger;
+        // constructor() {
         this.heroes = mock_heroes_1.HEROES;
     }
     HeroService.prototype.getHeroes = function () {
@@ -22,7 +24,7 @@ var HeroService = (function () {
     };
     HeroService = __decorate([
         angular2_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [logger_1.Logger])
     ], HeroService);
     return HeroService;
 })();
