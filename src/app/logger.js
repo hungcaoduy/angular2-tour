@@ -10,21 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var mock_heroes_1 = require('./models/mock-heroes');
-var HeroService = (function () {
-    // constructor(public logger: Logger) {
-    function HeroService() {
-        this.heroes = mock_heroes_1.HEROES;
+var Logger = (function () {
+    function Logger() {
     }
-    HeroService.prototype.getHeroes = function () {
-        // this.logger.log('Getting heroes ...');
-        return this.heroes;
-    };
-    HeroService = __decorate([
+    Logger.prototype.log = function () { };
+    ;
+    Logger = __decorate([
         angular2_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], HeroService);
-    return HeroService;
+    ], Logger);
+    return Logger;
 })();
-exports.HeroService = HeroService;
-//# sourceMappingURL=hero-service.js.map
+exports.Logger = Logger;
+//# sourceMappingURL=logger.js.map
