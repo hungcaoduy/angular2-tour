@@ -2,7 +2,7 @@
 	<ul>
 		<li *ng-for="#editItem of heroes">
 			<hero-card-component 
-				[hidden]="editItem.editing"
+				[hidden]=false
 				[hero]="editItem.item">
 			</hero-card-component>
 			<button

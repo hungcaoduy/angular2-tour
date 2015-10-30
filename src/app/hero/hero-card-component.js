@@ -15,9 +15,9 @@ var HeroCardComponent = (function () {
     }
     HeroCardComponent = __decorate([
         angular2_1.Component({
-            selector: 'hero-card.component',
+            selector: 'hero-card-component',
             properties: ['hero'],
-            template: "\n\t<div>\n\t\t<span> Name: </span>\n\t\t<span></span>\n\t</div>\n\t",
+            template: "\n\t<div>\n\t\t<span> Name: </span>\n\t\t<span> {{hero.name}} </span>\n\t</div>\n\t",
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])

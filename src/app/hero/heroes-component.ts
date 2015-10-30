@@ -8,7 +8,7 @@ import {HeroEditorComponent} from './hero-editor-component';
     selector: 'my-app',
     //template: '
     //'
-    templateUrl: 'app/hero/views/hero-list-edit.html', //this is a bit tricky, why ./hero-list.html does not work
+    templateUrl: 'app/hero/views/heroes.html', //this is a bit tricky, why ./hero-list.html does not work
     directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, HeroCardComponent, HeroEditorComponent],
     // styles:[`
     //         `]
@@ -38,5 +38,7 @@ export class HeroesComponent {
 class EditItem<T> {
     item: T;
     editing: boolean;
-    constructor(public anitem: T) {}
+    constructor(public anItem: T) { 
+        this.item = anItem;
+    }
 }

@@ -31,7 +31,7 @@ var HeroesComponent = (function () {
             selector: 'my-app',
             //template: '
             //'
-            templateUrl: 'app/hero/views/hero-list-edit.html',
+            templateUrl: 'app/hero/views/heroes.html',
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES, hero_card_component_1.HeroCardComponent, hero_editor_component_1.HeroEditorComponent],
             // styles:[`
             //         `]
@@ -43,8 +43,9 @@ var HeroesComponent = (function () {
 })();
 exports.HeroesComponent = HeroesComponent;
 var EditItem = (function () {
-    function EditItem(anitem) {
-        this.anitem = anitem;
+    function EditItem(anItem) {
+        this.anItem = anItem;
+        this.item = anItem;
     }
     return EditItem;
 })();
