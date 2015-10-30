@@ -10,32 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var hero_1 = require('./models/hero');
 var hero_service_1 = require('./hero-service');
+var hero_card_component_1 = require('./hero-card-component');
+var hero_editor_component_1 = require('./hero-editor-component');
 var HeroesComponent = (function () {
     function HeroesComponent(heroService) {
         this.title = 'Tour of heroes.';
-        this.temp = '';
-        this.heroes = heroService.getHeroes();
+        this.heroes = heroService.getHeroes()
+            .map(function (item) { return new EditItem(item); });
     }
-    HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
-    HeroesComponent.prototype.getSelectedClass = function (hero) { return { 'selected': hero === this.selectedHero }; };
-    HeroesComponent.prototype.onKey = function (event) {
-        //this.temp += event.target.value + " | ";
+    HeroesComponent.prototype.onSaved = function (editItem, updatedHero) {
+        editItem.item = updatedHero;
+        editItem.editing = false;
     };
-    HeroesComponent.prototype.addHero = function (newHero) {
-        var aNewHero = new hero_1.Hero();
-        aNewHero.id = 111;
-        aNewHero.name = newHero.value;
-        this.heroes.push(aNewHero);
+    HeroesComponent.prototype.onCanceled = function (editItem) {
+        editItem.editing = false;
     };
     HeroesComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
             //template: '
             //'
-            templateUrl: 'app/hero/views/hero-list.html',
-            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
+            templateUrl: 'app/hero/views/hero-list-edit.html',
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES, hero_card_component_1.HeroCardComponent, hero_editor_component_1.HeroEditorComponent],
             // styles:[`
             //         `]
             styleUrls: ['app/hero/views/hero-list.css']
@@ -45,4 +42,10 @@ var HeroesComponent = (function () {
     return HeroesComponent;
 })();
 exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=hero-component.js.map
+var EditItem = (function () {
+    function EditItem(anitem) {
+        this.anitem = anitem;
+    }
+    return EditItem;
+})();
+//# sourceMappingURL=heroes-component.js.map
