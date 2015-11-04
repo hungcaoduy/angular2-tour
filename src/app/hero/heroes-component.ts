@@ -49,10 +49,6 @@ class EditItem<T> {
     constructor(public anItem: T) { 
         this.item = anItem;
     }
-<<<<<<< HEAD
 }
 
-// bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);
-=======
 }
->>>>>>> 12b62902faedf6fafc81d03cdf36ea851b61ea00
