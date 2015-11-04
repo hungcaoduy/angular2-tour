@@ -13,7 +13,7 @@ import {Hero} from './models/hero';
 		<input [(ng-model)] = "hero.name"/>
 		<div>
 			<button (click)="onSaved()"> Save </button>
-			<button (click)="onCanceled"> Cancel </button>
+			<button (click)="onCanceled()"> Cancel </button>
 		</div>
 	</div>
 	`,
@@ -36,10 +36,12 @@ export class HeroEditorComponent {
 	}
 	
 	onSaved() {
+		console.log('onSaved');
 		this.saved.next(this.restoreService.getItem());
 	}
 	
 	onCanceled () {
+		console.log('onCanceled');
 		this.hero = this.restoreService.restoreItem();
 		this.canceled.next(this.hero);
 	}

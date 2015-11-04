@@ -28,9 +28,11 @@ var HeroEditorComponent = (function () {
         configurable: true
     });
     HeroEditorComponent.prototype.onSaved = function () {
+        console.log('onSaved');
         this.saved.next(this.restoreService.getItem());
     };
     HeroEditorComponent.prototype.onCanceled = function () {
+        console.log('onCanceled');
         this.hero = this.restoreService.restoreItem();
         this.canceled.next(this.hero);
     };
@@ -40,7 +42,7 @@ var HeroEditorComponent = (function () {
             events: ['canceled', 'saved'],
             properties: ['hero'],
             providers: [restore_service_1.RestoreService],
-            template: "\n\t<div>\n\t\t<span>Name:</span>\n\t\t<input [(ng-model)] = \"hero.name\"/>\n\t\t<div>\n\t\t\t<button (click)=\"onSaved()\"> Save </button>\n\t\t\t<button (click)=\"onCanceled\"> Cancel </button>\n\t\t</div>\n\t</div>\n\t",
+            template: "\n\t<div>\n\t\t<span>Name:</span>\n\t\t<input [(ng-model)] = \"hero.name\"/>\n\t\t<div>\n\t\t\t<button (click)=\"onSaved()\"> Save </button>\n\t\t\t<button (click)=\"onCanceled()\"> Cancel </button>\n\t\t</div>\n\t</div>\n\t",
             directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [restore_service_1.RestoreService])

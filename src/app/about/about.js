@@ -10,19 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var HeroCardComponent = (function () {
-    function HeroCardComponent() {
+var name_list_1 = require('../providers/name_list');
+var AboutComponent = (function () {
+    function AboutComponent(list) {
+        this.list = list;
     }
-    HeroCardComponent = __decorate([
+    AboutComponent.prototype.addName = function (newname) {
+        this.list.add(newname.value);
+        newname.value = '';
+        // prevent default form submit behavior to refresh the page
+        return false;
+    };
+    AboutComponent = __decorate([
         angular2_1.Component({
-            selector: 'hero-card-component',
-            properties: ['hero'],
-            template: "\n\t<div>\n\t\t<span> Name: </span>\n\t\t<span> {{hero.name}} </span>\n\t</div>\n\t",
+            selector: 'About',
+            templateUrl: 'app/about/about.html',
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [])
-    ], HeroCardComponent);
-    return HeroCardComponent;
+        __metadata('design:paramtypes', [name_list_1.NameList])
+    ], AboutComponent);
+    return AboutComponent;
 })();
-exports.HeroCardComponent = HeroCardComponent;
-//# sourceMappingURL=hero-card-component.js.map
+exports.AboutComponent = AboutComponent;
+//# sourceMappingURL=about.js.map
