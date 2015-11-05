@@ -1,6 +1,6 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Hero} from './models/hero';
-import {HeroService} from './hero-service';
+import {HeroService} from '../services/hero-service';
 import {HeroCardComponent} from './hero-card-component';
 import {HeroEditorComponent} from './hero-editor-component';
 import {AboutComponent} from '../about/about';
@@ -17,7 +17,7 @@ import {heroServiceProvider} from '../providers/hero-service-provider';
     selector: 'Heroes',
     //template: '
     //'
-    templateUrl: 'app/hero/views/heroes.html', //this is a bit tricky, why ./hero-list.html does not work
+    templateUrl: '/src/app/hero/views/heroes.html', //this is a bit tricky, why ./hero-list.html does not work
     directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, HeroCardComponent, HeroEditorComponent],
     // styles:[`
     //         `]
@@ -50,5 +50,3 @@ class EditItem<T> {
         this.item = anItem;
     }
 }
-
-// bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);

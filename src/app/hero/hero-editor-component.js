@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var restore_service_1 = require('./restore-service');
+var restore_service_1 = require('../services/restore-service');
 var HeroEditorComponent = (function () {
     function HeroEditorComponent(restoreService) {
         this.restoreService = restoreService;

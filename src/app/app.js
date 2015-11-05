@@ -15,6 +15,7 @@ var about_1 = require('./about/about');
 var logger_1 = require('./providers/logger');
 var options_1 = require('./providers/options');
 var hero_service_provider_1 = require('./providers/hero-service-provider');
+var name_list_provider_1 = require('./providers/name-list-provider');
 var router_1 = require('angular2/router');
 var AppComponent = (function () {
     function AppComponent() {
@@ -22,9 +23,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'App',
-            template: "\n\t<h1>My app start here</h1>\n\t<nav>\n\t\t<a [router-link]=\"['/Heroes']\" id=\"heroes-link\">Heroes</a>\n\t\t<a [router-link]=\"['/About']\" id=\"about-link\">About</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
+            template: "\n\t<h1>My app start here</h1>\n\t<nav>\n\t\t<a [router-link]=\"['./Heroes']\" id=\"heroes-link\">Heroes</a>\n\t\t<a [router-link]=\"['./About']\" id=\"about-link\">About</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
             encapsulation: angular2_1.ViewEncapsulation.None,
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES, router_1.RouterOutlet]
         }),
         router_1.RouteConfig([
             { path: '/heroes', component: heroes_component_1.HeroesComponent, as: 'Heroes' },
@@ -40,7 +41,7 @@ angular2_1.bootstrap(AppComponent, [
     angular2_1.provide(router_1.APP_BASE_HREF, { useValue: '/src/app' }),
     hero_service_provider_1.heroServiceProvider,
     logger_1.Logger,
-    options_1.Options
+    options_1.Options,
+    name_list_provider_1.nameListProvider
 ]);
-// bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);
 //# sourceMappingURL=app.js.map

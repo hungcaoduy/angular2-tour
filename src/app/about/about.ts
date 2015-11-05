@@ -1,10 +1,10 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import { RouterLink } from 'angular2/router';
-import {NameList} from '../providers/name_list';
+import {NameList} from './name-list';
 
 @Component({
   selector: 'About',
-  templateUrl: 'app/about/about.html',
+  templateUrl: '/src/app/about/about.html',
   directives: [CORE_DIRECTIVES]
 })
 export class AboutComponent {

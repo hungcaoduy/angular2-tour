@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var hero_service_1 = require('./hero-service');
+var hero_service_1 = require('../services/hero-service');
 var hero_card_component_1 = require('./hero-card-component');
 var hero_editor_component_1 = require('./hero-editor-component');
 // bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);
@@ -33,7 +33,7 @@ var HeroesComponent = (function () {
             selector: 'Heroes',
             //template: '
             //'
-            templateUrl: 'app/hero/views/heroes.html',
+            templateUrl: '/src/app/hero/views/heroes.html',
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES, hero_card_component_1.HeroCardComponent, hero_editor_component_1.HeroEditorComponent],
             // styles:[`
             //         `]
@@ -51,5 +51,4 @@ var EditItem = (function () {
     }
     return EditItem;
 })();
-// bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]); 
 //# sourceMappingURL=heroes-component.js.map

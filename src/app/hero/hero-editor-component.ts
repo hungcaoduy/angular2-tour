@@ -1,5 +1,5 @@
 import {Component, FORM_DIRECTIVES, EventEmitter, CORE_DIRECTIVES} from 'angular2/angular2';
-import {RestoreService} from './restore-service';
+import {RestoreService} from '../services/restore-service';
 import {Hero} from './models/hero';
 
 @Component({

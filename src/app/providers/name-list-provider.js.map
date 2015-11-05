@@ -1,0 +1,1 @@
+{"version":3,"file":"name-list-provider.js","sourceRoot":"","sources":["name-list-provider.ts"],"names":[],"mappings":"AAAA,yBAAsB,mBAAmB,CAAC,CAAA;AAC1C,0BAAuB,oBAAoB,CAAC,CAAA;AAC5C,IAAI,eAAe,GAAG;IACrB,MAAM,CAAC,IAAI,oBAAQ,EAAE,CAAC;AACvB,CAAC,CAAA;AACD,IAAI,kBAAkB,GAAG;IACxB,UAAU,EAAE,eAAe;CAC3B,CAAA;AACU,wBAAgB,GAAG,kBAAO,CAAC,oBAAQ,EAAE,kBAAkB,CAAC,CAAC"}

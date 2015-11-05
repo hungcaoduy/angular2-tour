@@ -1,6 +1,6 @@
 import {bootstrap, provide} from 'angular2/angular2';
 import {HeroesComponent} from '../hero/heroes-component';
-import {HeroService} from '../hero/hero-service';
+import {HeroService} from '../services/hero-service';
 import {Logger} from './logger';
 import {Options} from './options';
 import {Config} from './config';

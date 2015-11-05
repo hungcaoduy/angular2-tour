@@ -4,7 +4,7 @@ import {AboutComponent} from './about/about';
 import {Logger} from './providers/logger';
 import {Options} from './providers/options'
 import {heroServiceProvider} from './providers/hero-service-provider';
-
+import {nameListProvider} from './providers/name-list-provider';
 import {RouteConfig, 
 		RouterLink, 
 		RouterOutlet, 
@@ -17,13 +17,13 @@ import {RouteConfig,
 	template: `
 	<h1>My app start here</h1>
 	<nav>
-		<a [router-link]="['/Heroes']" id="heroes-link">Heroes</a>
-		<a [router-link]="['/About']" id="about-link">About</a>
+		<a [router-link]="['./Heroes']" id="heroes-link">Heroes</a>
+		<a [router-link]="['./About']" id="about-link">About</a>
 	</nav>
 	<router-outlet></router-outlet>
 	`	,
 	encapsulation: ViewEncapsulation.None,
-	directives: [ROUTER_DIRECTIVES]
+	directives: [ROUTER_DIRECTIVES, RouterOutlet]
 })
 @RouteConfig([
   { path: '/heroes', component: HeroesComponent, as: 'Heroes' },
@@ -37,6 +37,6 @@ bootstrap(AppComponent, [
 	provide(APP_BASE_HREF, {useValue: '/src/app'}),
 	heroServiceProvider,
 	Logger,
-	Options
+	Options,
+	nameListProvider
 	]);
-// bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);

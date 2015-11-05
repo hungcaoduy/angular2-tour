@@ -6,7 +6,10 @@
         <script src="../node_modules/angular2/bundles/router.dev.js"></script>
         <script>
           System.config({
-            packages: {'app': {defaultExtension: 'js'}}
+            packages: {'app': {defaultExtension: 'js'}},
+            map: {
+                package: 'src/app'
+            }
           });
           System.import('app/app.js');
         </script>

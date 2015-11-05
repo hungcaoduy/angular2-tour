@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var name_list_1 = require('../providers/name_list');
+var name_list_1 = require('./name-list');
 var AboutComponent = (function () {
     function AboutComponent(list) {
         this.list = list;
@@ -24,7 +24,7 @@ var AboutComponent = (function () {
     AboutComponent = __decorate([
         angular2_1.Component({
             selector: 'About',
-            templateUrl: 'app/about/about.html',
+            templateUrl: '/src/app/about/about.html',
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [name_list_1.NameList])
