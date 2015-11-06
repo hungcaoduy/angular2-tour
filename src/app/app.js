@@ -23,12 +23,13 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'App',
-            template: "\n\t<h1>My app start here</h1>\n\t<nav>\n\t\t<a [router-link]=\"['./Heroes']\" id=\"heroes-link\">Heroes</a>\n\t\t<a [router-link]=\"['./About']\" id=\"about-link\">About</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
+            template: "\n\t<h1>My app start here</h1>\n\t<nav>\n\t\t<a [router-link]=\"['./']\">Home</a>\n\t\t<a [router-link]=\"['./Heroes']\" id=\"heroes-link\">Heroes</a>\n\t\t<a [router-link]=\"['./About']\" id=\"about-link\">About</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
             encapsulation: angular2_1.ViewEncapsulation.None,
             directives: [router_1.ROUTER_DIRECTIVES, router_1.RouterOutlet]
         }),
         router_1.RouteConfig([
-            { path: '/heroes', component: heroes_component_1.HeroesComponent, as: 'Heroes' },
+            { path: '/', component: AppComponent, as: 'Home' },
+            { path: '/heroes/...', component: heroes_component_1.HeroesComponent, as: 'Heroes' },
             { path: '/about', component: about_1.AboutComponent, as: 'About' }
         ]), 
         __metadata('design:paramtypes', [])

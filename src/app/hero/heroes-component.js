@@ -15,6 +15,21 @@ var hero_card_component_1 = require('./hero-card-component');
 var hero_editor_component_1 = require('./hero-editor-component');
 // bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);
 //
+var router_1 = require('angular2/router');
+var HeroDetailComponent = (function () {
+    function HeroDetailComponent(params) {
+        this.name = params.get('name');
+    }
+    HeroDetailComponent = __decorate([
+        angular2_1.Component({
+            templateUrl: '/src/app/hero/views/hero-detail.html',
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
+        }), 
+        __metadata('design:paramtypes', [router_1.RouteParams])
+    ], HeroDetailComponent);
+    return HeroDetailComponent;
+})();
+exports.HeroDetailComponent = HeroDetailComponent;
 var HeroesComponent = (function () {
     function HeroesComponent(heroService) {
         this.title = 'Tour of heroes.';
@@ -37,8 +52,11 @@ var HeroesComponent = (function () {
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES, hero_card_component_1.HeroCardComponent, hero_editor_component_1.HeroEditorComponent],
             // styles:[`
             //         `]
-            styleUrls: ['app/hero/views/hero-list.css']
-        }), 
+            styleUrls: ['/src/app/hero/views/hero-list.css']
+        }),
+        router_1.RouteConfig([
+            { path: '/heroes/:name', component: HeroDetailComponent, as: 'HeroDetail' },
+        ]), 
         __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], HeroesComponent);
     return HeroesComponent;

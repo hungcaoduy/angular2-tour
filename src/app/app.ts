@@ -17,6 +17,7 @@ import {RouteConfig,
 	template: `
 	<h1>My app start here</h1>
 	<nav>
+		<a [router-link]="['./']">Home</a>
 		<a [router-link]="['./Heroes']" id="heroes-link">Heroes</a>
 		<a [router-link]="['./About']" id="about-link">About</a>
 	</nav>
@@ -26,7 +27,8 @@ import {RouteConfig,
 	directives: [ROUTER_DIRECTIVES, RouterOutlet]
 })
 @RouteConfig([
-  { path: '/heroes', component: HeroesComponent, as: 'Heroes' },
+  {path: '/', component: AppComponent, as: 'Home'},
+  { path: '/heroes/...', component: HeroesComponent, as: 'Heroes' },
   { path: '/about', component: AboutComponent, as: 'About' }
 ])
 class AppComponent {}

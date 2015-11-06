@@ -16,7 +16,10 @@
 				[hidden]="!editItem.editing"
 				[hero]="editItem.item">
 			</hero-editor-component>
+			<!--<button>
+			</button>-->
+			<a [router-link]="['./HeroDetail', {'name':editItem.item.name}]">Hero</a>
 		</li>
 	</ul>
 </div>
-<a router-link='Heroes'> Heroes </a>
+<router-outlet></router-outlet>

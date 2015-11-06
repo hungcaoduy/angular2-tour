@@ -4,7 +4,6 @@ import {HeroService} from '../services/hero-service';
 import {HeroCardComponent} from './hero-card-component';
 import {HeroEditorComponent} from './hero-editor-component';
 import {AboutComponent} from '../about/about';
-import {RouterLink} from 'angular2/router';
 
 //
 import {Logger} from '../providers/logger';
@@ -12,6 +11,25 @@ import {Options} from '../providers/options'
 import {heroServiceProvider} from '../providers/hero-service-provider';
 // bootstrap(HeroesComponent, [heroServiceProvider, Logger, Options]);
 //
+import {RouteConfig, 
+		RouterLink, 
+		RouterOutlet, 
+		ROUTER_DIRECTIVES, 
+		ROUTER_PROVIDERS, PathLocationStrategy,
+		RouteParams, APP_BASE_HREF} from 'angular2/router';
+
+
+@Component({
+    templateUrl: '/src/app/hero/views/hero-detail.html',
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+})
+export class HeroDetailComponent {
+    name: string;
+    constructor(params: RouteParams) {
+        this.name = params.get('name');
+    }
+}
+
 
 @Component({
     selector: 'Heroes',
@@ -21,8 +39,11 @@ import {heroServiceProvider} from '../providers/hero-service-provider';
     directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, HeroCardComponent, HeroEditorComponent],
     // styles:[`
     //         `]
-    styleUrls: ['app/hero/views/hero-list.css']
+    styleUrls: ['/src/app/hero/views/hero-list.css']
 })
+@RouteConfig([
+  { path: '/heroes/:name', component: HeroDetailComponent, as: 'HeroDetail' },
+])
 
 export class HeroesComponent { 
     public title = 'Tour of heroes.';

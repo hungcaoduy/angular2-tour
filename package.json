@@ -18,5 +18,16 @@
   "devDependencies": {
     "live-server": "^0.8.2",
     "typescript": "^1.6.2"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "../../../../src/app"
+    },
+    "dependencies": {
+      "systemjs/plugin-text": "github:systemjs/plugin-text@^0.0.3"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
   }
 }
